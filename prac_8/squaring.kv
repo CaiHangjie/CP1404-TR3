@@ -1,0 +1,28 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+        # Change the orientation so the widgets display left-to-right
+        orientation: 'horizontal'
+
+        TextInput:
+            id: input_number
+            text: '7'
+            font_size: 48
+            multiline: False
+
+        Button:
+            text: 'Square'
+            # Specify the function in the app class to call when the button is pressed
+            on_press: app.handle_calculate(input_number.text)
+
+        Label:
+            id: output_label
+            font_size: 48
+            # Change the output Label text color to pink (is an RGBA tuple)
+            color: (1, 0.85, 0.92, 1)
+
+    # Add a label at the bottom with the text
+    Label:
+        text: 'Enter a number and press "Square"'
+
