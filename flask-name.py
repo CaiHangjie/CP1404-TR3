@@ -4,14 +4,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return '<h1>Hello World :)</h1>'
+    return 'Hello World!'
 
 
 @app.route('/greet')
-@app.route('/greet/<name>')
-def greet(name="Cai Hangjie"):
-    return f"<h1>Hello {name} :)</h1>"
+def greet():
+    return "Hello Cai Hangjie"
 
+
+@app.route('/greet/<name>')
+def greet_name(name):
+    return f"Hello {name}"
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
